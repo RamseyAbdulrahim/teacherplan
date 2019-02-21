@@ -57,6 +57,22 @@ class ImprovementPlansController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @improvement_plan = ImprovementPlan.find(params.fetch("id_to_remove"))
+
+    @improvement_plan.destroy
+
+    redirect_to("/users/#{@improvement_plan.user_id}", notice: "ImprovementPlan deleted successfully.")
+  end
+
+  def destroy_row_from_coach
+    @improvement_plan = ImprovementPlan.find(params.fetch("id_to_remove"))
+
+    @improvement_plan.destroy
+
+    redirect_to("/coaches/#{@improvement_plan.coach_id}", notice: "ImprovementPlan deleted successfully.")
+  end
+
   def destroy_row
     @improvement_plan = ImprovementPlan.find(params.fetch("id_to_remove"))
 
