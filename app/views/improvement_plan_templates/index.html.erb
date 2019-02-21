@@ -66,7 +66,11 @@
 
         <!-- Display improvement_plan.user_id start -->
         <td>
-          <%= improvement_plan.user.created_at %>
+          <% if improvement_plan.user.present? %>
+            <a href="/users/<%= improvement_plan.user.id %>">
+              <%= improvement_plan.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display improvement_plan.user_id end -->
 
@@ -84,7 +88,11 @@
 
         <!-- Display improvement_plan.coach_id start -->
         <td>
-          <%= improvement_plan.coach.inviter_id %>
+          <% if improvement_plan.coach.present? %>
+            <a href="/coaches/<%= improvement_plan.coach.id %>">
+              <%= improvement_plan.coach.inviter_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display improvement_plan.coach_id end -->
 

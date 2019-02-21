@@ -74,7 +74,11 @@
 
         <!-- Display goal.plan_id start -->
         <td>
-          <%= goal.plan.user_id %>
+          <% if goal.plan.present? %>
+            <a href="/improvement_plans/<%= goal.plan.id %>">
+              <%= goal.plan.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display goal.plan_id end -->
 

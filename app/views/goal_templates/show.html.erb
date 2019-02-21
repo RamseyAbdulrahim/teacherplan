@@ -52,7 +52,11 @@
       </dt>
       <!-- Display plan_id start -->
       <dd>
-        <%= @goal.plan_id %>
+        <% if @goal.plan.present? %>
+          <a href="/improvement_plans/<%= @goal.plan_id %>">
+            <%= @goal.plan.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display plan_id end -->
 

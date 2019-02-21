@@ -74,7 +74,11 @@
 
         <!-- Display action_step.goal_id start -->
         <td>
-          <%= action_step.goal.comments %>
+          <% if action_step.goal.present? %>
+            <a href="/goals/<%= action_step.goal.id %>">
+              <%= action_step.goal.comments %>
+            </a>
+          <% end %>
         </td>
         <!-- Display action_step.goal_id end -->
 

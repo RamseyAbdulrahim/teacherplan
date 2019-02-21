@@ -34,7 +34,11 @@
       </dt>
       <!-- Display goal_id start -->
       <dd>
-        <%= @action_step.goal_id %>
+        <% if @action_step.goal.present? %>
+          <a href="/goals/<%= @action_step.goal_id %>">
+            <%= @action_step.goal.comments %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display goal_id end -->
 
