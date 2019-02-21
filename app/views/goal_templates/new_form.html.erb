@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for plan_id start -->
-    <input type="text" id="plan_id" name="plan_id" class="form-control">
+    <%= select_tag(:plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :user_id, @goal.plan_id), :class => "form-control") %>
     <!-- Input for plan_id end -->
   </div>
   <!-- Label and input for plan_id end -->
