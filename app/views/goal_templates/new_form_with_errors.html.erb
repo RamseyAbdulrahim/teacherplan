@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @goal.present? %>
+  <% if @goal.errors.any? %>
+    <% @goal.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new goal
+</h1>
+
+
+<hr>
+
+<!-- Form goal start -->
+<form action="/create_goal" method="post">
+<!-- Form goal end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <input type="text" id="comments" name="comments" class="form-control" value="<%= @goal.comments %>">
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @goal.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for plan_id start -->
+  <div class="form-group">
+    <label for="plan_id">
+      Plan
+    </label>
+
+    <!-- Input for plan_id start -->
+    <input type="text" id="plan_id" name="plan_id" class="form-control" value="<%= @goal.plan_id %>">
+    <!-- Input for plan_id end -->
+  </div>
+  <!-- Label and input for plan_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create goal
+  </button>
+</form>
+
+<hr>
+
+<a href="/goals">
+  Go back
+</a>
