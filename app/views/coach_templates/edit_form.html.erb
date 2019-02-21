@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form coach start -->
 <form action="/update_coach/<%= @coach.id %>" method="post">
-<!-- Form coach end -->
 
-  <!-- Label and input for inviter_id start -->
   <div class="form-group">
     <label for="inviter_id">
       Inviter
     </label>
 
-    <!-- Input for inviter_id start -->
     <input type="text" id="inviter_id" name="inviter_id" class="form-control" value="<%= @coach.inviter_id %>">
-    <!-- Input for inviter_id end -->
   </div>
-  <!-- Label and input for inviter_id end -->
 
-  <!-- Label and input for invitee_id start -->
   <div class="form-group">
     <label for="invitee_id">
       Invitee
     </label>
 
-    <!-- Input for invitee_id start -->
     <input type="text" id="invitee_id" name="invitee_id" class="form-control" value="<%= @coach.invitee_id %>">
-    <!-- Input for invitee_id end -->
   </div>
-  <!-- Label and input for invitee_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update coach

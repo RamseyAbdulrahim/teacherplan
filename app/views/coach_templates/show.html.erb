@@ -11,67 +11,53 @@
         </a>
       </div>
 
-      <!-- Edit link coach start -->
       <div class="col">
         <a href="/coaches/<%= @coach.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit coach
         </a>
       </div>
-      <!-- Edit link coach end -->
 
-      <!-- Delete link coach start -->
       <div class="col">
         <a href="/delete_coach/<%= @coach.id %>" class="btn btn-block btn-outline-secondary">
           Delete coach
         </a>
       </div>
-      <!-- Delete link coach end -->
     </div>
 
     <dl>
       <dt>
         Inviter
       </dt>
-      <!-- Display inviter_id start -->
       <dd>
         <%= @coach.inviter_id %>
       </dd>
-      <!-- Display inviter_id end -->
 
       <dt>
         Invitee
       </dt>
-      <!-- Display invitee_id start -->
       <dd>
         <%= @coach.invitee_id %>
       </dd>
-      <!-- Display invitee_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@coach.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@coach.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "coach_templates/coach_improvement_plans" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

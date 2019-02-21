@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "action_step_templates/action_steps_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -70,13 +66,10 @@
 
       <% @action_steps.each do |action_step| %>
       <tr>
-        <!-- Display action_step.id start -->
         <td>
           <%= action_step.id %>
         </td>
-        <!-- Display action_step.id end -->
 
-        <!-- Display action_step.goal_id start -->
         <td>
           <% if action_step.goal.present? %>
             <a href="/goals/<%= action_step.goal.id %>">
@@ -84,49 +77,34 @@
             </a>
           <% end %>
         </td>
-        <!-- Display action_step.goal_id end -->
 
-        <!-- Display action_step.timeline start -->
         <td>
           <%= action_step.timeline %>
         </td>
-        <!-- Display action_step.timeline end -->
 
-        <!-- Display action_step.lead_persons start -->
         <td>
           <%= action_step.lead_persons %>
         </td>
-        <!-- Display action_step.lead_persons end -->
 
-        <!-- Display action_step.resources_needed start -->
         <td>
           <%= action_step.resources_needed %>
         </td>
-        <!-- Display action_step.resources_needed end -->
 
-        <!-- Display action_step.specifics_of_implementation start -->
         <td>
           <%= action_step.specifics_of_implementation %>
         </td>
-        <!-- Display action_step.specifics_of_implementation end -->
 
-        <!-- Display action_step.measures_of_success start -->
         <td>
           <%= action_step.measures_of_success %>
         </td>
-        <!-- Display action_step.measures_of_success end -->
 
-        <!-- Display action_step.created_at start -->
         <td>
           <%= time_ago_in_words(action_step.created_at) %> ago
         </td>
-        <!-- Display action_step.created_at end -->
 
-        <!-- Display action_step.updated_at start -->
         <td>
           <%= time_ago_in_words(action_step.updated_at) %> ago
         </td>
-        <!-- Display action_step.updated_at end -->
 
         <td>
           <a href="/action_steps/<%= action_step.id %>">

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "coach_templates/coaches_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,35 +50,25 @@
 
       <% @coaches.each do |coach| %>
       <tr>
-        <!-- Display coach.id start -->
         <td>
           <%= coach.id %>
         </td>
-        <!-- Display coach.id end -->
 
-        <!-- Display coach.inviter_id start -->
         <td>
           <%= coach.inviter_id %>
         </td>
-        <!-- Display coach.inviter_id end -->
 
-        <!-- Display coach.invitee_id start -->
         <td>
           <%= coach.invitee_id %>
         </td>
-        <!-- Display coach.invitee_id end -->
 
-        <!-- Display coach.created_at start -->
         <td>
           <%= time_ago_in_words(coach.created_at) %> ago
         </td>
-        <!-- Display coach.created_at end -->
 
-        <!-- Display coach.updated_at start -->
         <td>
           <%= time_ago_in_words(coach.updated_at) %> ago
         </td>
-        <!-- Display coach.updated_at end -->
 
         <td>
           <a href="/coaches/<%= coach.id %>">

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "goal_templates/goals_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,25 +54,18 @@
 
       <% @goals.each do |goal| %>
       <tr>
-        <!-- Display goal.id start -->
         <td>
           <%= goal.id %>
         </td>
-        <!-- Display goal.id end -->
 
-        <!-- Display goal.comments start -->
         <td>
           <%= goal.comments %>
         </td>
-        <!-- Display goal.comments end -->
 
-        <!-- Display goal.description start -->
         <td>
           <%= goal.description %>
         </td>
-        <!-- Display goal.description end -->
 
-        <!-- Display goal.plan_id start -->
         <td>
           <% if goal.plan.present? %>
             <a href="/improvement_plans/<%= goal.plan.id %>">
@@ -84,19 +73,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display goal.plan_id end -->
 
-        <!-- Display goal.created_at start -->
         <td>
           <%= time_ago_in_words(goal.created_at) %> ago
         </td>
-        <!-- Display goal.created_at end -->
 
-        <!-- Display goal.updated_at start -->
         <td>
           <%= time_ago_in_words(goal.updated_at) %> ago
         </td>
-        <!-- Display goal.updated_at end -->
 
         <td>
           <a href="/goals/<%= goal.id %>">

@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link improvement_plan start -->
       <div class="col">
         <% if current_user == @improvement_plan.user %>
           <a href="/improvement_plans/<%= @improvement_plan.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link improvement_plan end -->
 
-      <!-- Delete link improvement_plan start -->
       <div class="col">
         <% if current_user == @improvement_plan.user %>
           <a href="/delete_improvement_plan/<%= @improvement_plan.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link improvement_plan end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @improvement_plan.user.present? %>
           <a href="/users/<%= @improvement_plan.user_id %>">
@@ -44,30 +39,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Status
       </dt>
-      <!-- Display status start -->
       <dd>
         <%= @improvement_plan.status %>
       </dd>
-      <!-- Display status end -->
 
       <dt>
         Comments
       </dt>
-      <!-- Display comments start -->
       <dd>
         <%= @improvement_plan.comments %>
       </dd>
-      <!-- Display comments end -->
 
       <dt>
         Coach
       </dt>
-      <!-- Display coach_id start -->
       <dd>
         <% if @improvement_plan.coach.present? %>
           <a href="/coaches/<%= @improvement_plan.coach_id %>">
@@ -75,33 +64,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display coach_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@improvement_plan.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@improvement_plan.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "improvement_plan_templates/improvement_plan_goals" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
