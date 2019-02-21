@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for goal_id start -->
-    <input type="text" id="goal_id" name="goal_id" class="form-control">
+    <%= select_tag(:goal_id, options_from_collection_for_select(Goal.all, :id, :comments, @action_step.goal_id), :class => "form-control") %>
     <!-- Input for goal_id end -->
   </div>
   <!-- Label and input for goal_id end -->
