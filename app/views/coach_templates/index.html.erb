@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All coaches
+    </h1>
+
+    <a href="/coaches/new" class="btn btn-block btn-outline-secondary">
+      Add a new coach
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Inviter
+        </th>
+
+        <th>
+          Invitee
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @coaches.each do |coach| %>
+      <tr>
+        <!-- Display coach.id start -->
+        <td>
+          <%= coach.id %>
+        </td>
+        <!-- Display coach.id end -->
+
+        <!-- Display coach.inviter_id start -->
+        <td>
+          <%= coach.inviter_id %>
+        </td>
+        <!-- Display coach.inviter_id end -->
+
+        <!-- Display coach.invitee_id start -->
+        <td>
+          <%= coach.invitee_id %>
+        </td>
+        <!-- Display coach.invitee_id end -->
+
+        <!-- Display coach.created_at start -->
+        <td>
+          <%= time_ago_in_words(coach.created_at) %> ago
+        </td>
+        <!-- Display coach.created_at end -->
+
+        <!-- Display coach.updated_at start -->
+        <td>
+          <%= time_ago_in_words(coach.updated_at) %> ago
+        </td>
+        <!-- Display coach.updated_at end -->
+
+        <td>
+          <a href="/coaches/<%= coach.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
