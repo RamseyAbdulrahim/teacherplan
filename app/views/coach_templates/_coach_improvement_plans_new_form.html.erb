@@ -1,0 +1,49 @@
+<!-- Form improvement_plan start -->
+<form action="/create_improvement_plan_from_coach" method="post">
+<!-- Form improvement_plan end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @improvement_plan.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <!-- Input for status start -->
+    <input type="text" id="status" name="status" class="form-control" value="<%= @improvement_plan.status %>">
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <input type="text" id="comments" name="comments" class="form-control" value="<%= @improvement_plan.comments %>">
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <!-- Label and input for coach_id start -->
+  <!-- Input for coach_id start -->
+  <input type="hidden" name="coach_id" value="<%= @coach.id %>">
+  <!-- Input for coach_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create improvement plan
+  </button>
+</form>

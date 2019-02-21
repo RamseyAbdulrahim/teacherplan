@@ -6,6 +6,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @action_step = ActionStep.new
     @goal = Goal.find(params.fetch("id_to_display"))
 
     render("goal_templates/show.html.erb")
@@ -28,6 +29,22 @@ class GoalsController < ApplicationController
       @goal.save
 
       redirect_back(:fallback_location => "/goals", :notice => "Goal created successfully.")
+    else
+      render("goal_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_improvement_plan
+    @goal = Goal.new
+
+    @goal.comments = params.fetch("comments")
+    @goal.description = params.fetch("description")
+    @goal.plan_id = params.fetch("plan_id")
+
+    if @goal.valid?
+      @goal.save
+
+      redirect_to("/improvement_plans/#{@goal.plan_id}", notice: "Goal created successfully.")
     else
       render("goal_templates/new_form_with_errors.html.erb")
     end
