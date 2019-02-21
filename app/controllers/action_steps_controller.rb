@@ -1,6 +1,6 @@
 class ActionStepsController < ApplicationController
   def index
-    @action_steps = ActionStep.all
+    @action_steps = ActionStep.page(params[:page]).per(10)
 
     render("action_step_templates/index.html.erb")
   end

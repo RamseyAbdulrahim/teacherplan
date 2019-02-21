@@ -1,6 +1,6 @@
 class CoachesController < ApplicationController
   def index
-    @coaches = Coach.all
+    @coaches = Coach.page(params[:page]).per(10)
 
     render("coach_templates/index.html.erb")
   end
