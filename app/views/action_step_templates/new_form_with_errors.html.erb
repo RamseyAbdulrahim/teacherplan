@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @action_step.present? %>
+  <% if @action_step.errors.any? %>
+    <% @action_step.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new action step
+</h1>
+
+
+<hr>
+
+<!-- Form action_step start -->
+<form action="/create_action_step" method="post">
+<!-- Form action_step end -->
+
+  <!-- Label and input for goal_id start -->
+  <div class="form-group">
+    <label for="goal_id">
+      Goal
+    </label>
+
+    <!-- Input for goal_id start -->
+    <input type="text" id="goal_id" name="goal_id" class="form-control" value="<%= @action_step.goal_id %>">
+    <!-- Input for goal_id end -->
+  </div>
+  <!-- Label and input for goal_id end -->
+
+  <!-- Label and input for timeline start -->
+  <div class="form-group">
+    <label for="timeline">
+      Timeline
+    </label>
+
+    <!-- Input for timeline start -->
+    <input type="text" id="timeline" name="timeline" class="form-control" value="<%= @action_step.timeline %>">
+    <!-- Input for timeline end -->
+  </div>
+  <!-- Label and input for timeline end -->
+
+  <!-- Label and input for lead_persons start -->
+  <div class="form-group">
+    <label for="lead_persons">
+      Lead persons
+    </label>
+
+    <!-- Input for lead_persons start -->
+    <input type="text" id="lead_persons" name="lead_persons" class="form-control" value="<%= @action_step.lead_persons %>">
+    <!-- Input for lead_persons end -->
+  </div>
+  <!-- Label and input for lead_persons end -->
+
+  <!-- Label and input for resources_needed start -->
+  <div class="form-group">
+    <label for="resources_needed">
+      Resources needed
+    </label>
+
+    <!-- Input for resources_needed start -->
+    <input type="text" id="resources_needed" name="resources_needed" class="form-control" value="<%= @action_step.resources_needed %>">
+    <!-- Input for resources_needed end -->
+  </div>
+  <!-- Label and input for resources_needed end -->
+
+  <!-- Label and input for specifics_of_implementation start -->
+  <div class="form-group">
+    <label for="specifics_of_implementation">
+      Specifics of implementation
+    </label>
+
+    <!-- Input for specifics_of_implementation start -->
+    <input type="text" id="specifics_of_implementation" name="specifics_of_implementation" class="form-control" value="<%= @action_step.specifics_of_implementation %>">
+    <!-- Input for specifics_of_implementation end -->
+  </div>
+  <!-- Label and input for specifics_of_implementation end -->
+
+  <!-- Label and input for measures_of_success start -->
+  <div class="form-group">
+    <label for="measures_of_success">
+      Measures of success
+    </label>
+
+    <!-- Input for measures_of_success start -->
+    <input type="text" id="measures_of_success" name="measures_of_success" class="form-control" value="<%= @action_step.measures_of_success %>">
+    <!-- Input for measures_of_success end -->
+  </div>
+  <!-- Label and input for measures_of_success end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create action step
+  </button>
+</form>
+
+<hr>
+
+<a href="/action_steps">
+  Go back
+</a>

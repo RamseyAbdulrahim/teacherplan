@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Action step #<%= @action_step.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/action_steps" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link action_step start -->
+      <div class="col">
+        <a href="/action_steps/<%= @action_step.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit action step
+        </a>
+      </div>
+      <!-- Edit link action_step end -->
+
+      <!-- Delete link action_step start -->
+      <div class="col">
+        <a href="/delete_action_step/<%= @action_step.id %>" class="btn btn-block btn-outline-secondary">
+          Delete action step
+        </a>
+      </div>
+      <!-- Delete link action_step end -->
+    </div>
+
+    <dl>
+      <dt>
+        Goal
+      </dt>
+      <!-- Display goal_id start -->
+      <dd>
+        <%= @action_step.goal_id %>
+      </dd>
+      <!-- Display goal_id end -->
+
+      <dt>
+        Timeline
+      </dt>
+      <!-- Display timeline start -->
+      <dd>
+        <%= @action_step.timeline %>
+      </dd>
+      <!-- Display timeline end -->
+
+      <dt>
+        Lead persons
+      </dt>
+      <!-- Display lead_persons start -->
+      <dd>
+        <%= @action_step.lead_persons %>
+      </dd>
+      <!-- Display lead_persons end -->
+
+      <dt>
+        Resources needed
+      </dt>
+      <!-- Display resources_needed start -->
+      <dd>
+        <%= @action_step.resources_needed %>
+      </dd>
+      <!-- Display resources_needed end -->
+
+      <dt>
+        Specifics of implementation
+      </dt>
+      <!-- Display specifics_of_implementation start -->
+      <dd>
+        <%= @action_step.specifics_of_implementation %>
+      </dd>
+      <!-- Display specifics_of_implementation end -->
+
+      <dt>
+        Measures of success
+      </dt>
+      <!-- Display measures_of_success start -->
+      <dd>
+        <%= @action_step.measures_of_success %>
+      </dd>
+      <!-- Display measures_of_success end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@action_step.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@action_step.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

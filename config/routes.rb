@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Action step resource:
+
+  # CREATE
+  get("/action_steps/new", { :controller => "action_steps", :action => "new_form" })
+  post("/create_action_step", { :controller => "action_steps", :action => "create_row" })
+
+  # READ
+  get("/action_steps", { :controller => "action_steps", :action => "index" })
+  get("/action_steps/:id_to_display", { :controller => "action_steps", :action => "show" })
+
+  # UPDATE
+  get("/action_steps/:prefill_with_id/edit", { :controller => "action_steps", :action => "edit_form" })
+  post("/update_action_step/:id_to_modify", { :controller => "action_steps", :action => "update_row" })
+
+  # DELETE
+  get("/delete_action_step/:id_to_remove", { :controller => "action_steps", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Goal resource:
 
   # CREATE
