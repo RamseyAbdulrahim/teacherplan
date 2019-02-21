@@ -52,7 +52,7 @@
     </label>
 
     <!-- Input for coach_id start -->
-    <input type="text" id="coach_id" name="coach_id" class="form-control">
+    <%= select_tag(:coach_id, options_from_collection_for_select(Coach.all, :id, :inviter_id, @improvement_plan.coach_id), :class => "form-control") %>
     <!-- Input for coach_id end -->
   </div>
   <!-- Label and input for coach_id end -->
