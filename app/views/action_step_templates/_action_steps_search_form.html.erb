@@ -1,0 +1,84 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "action_steps_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :measures_of_success_cont, "Measures of success contains" %>
+    <%= f.text_field :measures_of_success_cont, :class => "form-control", :placeholder => "Measures of success contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :specifics_of_implementation_cont, "Specifics of implementation contains" %>
+    <%= f.text_field :specifics_of_implementation_cont, :class => "form-control", :placeholder => "Specifics of implementation contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :resources_needed_cont, "Resources needed contains" %>
+    <%= f.text_field :resources_needed_cont, :class => "form-control", :placeholder => "Resources needed contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :lead_persons_cont, "Lead persons contains" %>
+    <%= f.text_field :lead_persons_cont, :class => "form-control", :placeholder => "Lead persons contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :timeline_cont, "Timeline contains" %>
+    <%= f.text_field :timeline_cont, :class => "form-control", :placeholder => "Timeline contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :goal_comments_cont, "Goal comments contains" %>
+    <%= f.text_field :goal_comments_cont, :class => "form-control", :placeholder => "Goal comments contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/action_steps" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#action_steps_filters">
+  Show filters
+</a>
