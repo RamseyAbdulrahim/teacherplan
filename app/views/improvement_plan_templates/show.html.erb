@@ -13,17 +13,21 @@
 
       <!-- Edit link improvement_plan start -->
       <div class="col">
-        <a href="/improvement_plans/<%= @improvement_plan.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit improvement plan
-        </a>
+        <% if current_user == @improvement_plan.user %>
+          <a href="/improvement_plans/<%= @improvement_plan.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit improvement_plan
+          </a>
+        <% end %>
       </div>
       <!-- Edit link improvement_plan end -->
 
       <!-- Delete link improvement_plan start -->
       <div class="col">
-        <a href="/delete_improvement_plan/<%= @improvement_plan.id %>" class="btn btn-block btn-outline-secondary">
-          Delete improvement plan
-        </a>
+        <% if current_user == @improvement_plan.user %>
+          <a href="/delete_improvement_plan/<%= @improvement_plan.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete improvement_plan
+          </a>
+        <% end %>
       </div>
       <!-- Delete link improvement_plan end -->
     </div>
